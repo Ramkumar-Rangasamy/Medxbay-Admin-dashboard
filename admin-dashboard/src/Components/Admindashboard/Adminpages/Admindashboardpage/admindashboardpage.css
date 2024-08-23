@@ -1,0 +1,583 @@
+.main-dashboard-page {
+    padding: 0 20px;
+}
+  
+  .main-dashboard-page h2 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 28.8px;
+    color: #272848;
+    display: inline-block;
+    padding:20px 10px 0 5px;
+    margin-bottom: 30px;
+  }
+  
+  .dashboard-scoll-head {
+    overflow-y: auto;
+    height:calc(100vh - 180px);
+  }
+  
+  .dashboard-scoll-head::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  .dashboard-gird-layout{
+    display: grid;
+    grid-template-areas: 
+      "insight-patient income-head dashboard-blogs-patient"
+      "consultation booking-rate booking-rate"
+      "reviews booking-rate booking-rate";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 330px 170px  auto;
+    grid-gap: 20px;
+    margin: 5px 5px 5px 5px;
+  }
+  
+  .insight-patient {
+    grid-area: insight-patient;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0000001A;
+    height: 100%;
+  }
+  
+  .income-head {
+    grid-area: income-head;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0000001A;
+    height: 100%;
+  }
+  
+  .dashboard-blogs-patient {
+    grid-area: dashboard-blogs-patient;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0000001A;
+    height: 100%;
+  }
+  
+  .consultation {
+    grid-area: consultation;
+    background: #5577D1;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #0000001A;
+    height: 100%;
+  }
+  
+  .booking-rate {
+    grid-area: booking-rate;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0000001A;
+    height: 100%;
+  }
+  
+  .reviews {
+    grid-area: reviews;
+    background: #2A3F74;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #0000001A;
+    height: 100%;
+  }
+  
+  
+  /* Desktop view: 1280px and above */
+  
+  @media (max-width: 1440px)and (min-width: 1310px) {
+    .dashboard-gird-layout {
+      grid-template-areas: 
+        "insight-patient income-head dashboard-blogs-patient"
+        "consultation booking-rate booking-rate"
+        "reviews booking-rate booking-rate";
+      grid-template-columns: repeat(1fr,1fr,1fr);
+      gap: 20px;
+    }
+    .insight-patient, .income-head, .dashboard-blogs-patient{
+      max-width: 1200px;
+    }
+    .consultation, .reviews{
+      width: 100%;
+    }
+    .booking-rate{
+      width:100%;
+    } 
+    .chart-area {
+      width:300px;
+      height: 200px;
+    }
+  
+  }
+  
+  @media (max-width: 1280px) {
+    .dashboard-gird-layout {
+      grid-template-areas: 
+        "insight-patient income-head dashboard-blogs-patient"
+        "consultation booking-rate booking-rate"
+        "reviews booking-rate booking-rate";
+      grid-template-columns: repeat(1fr,1fr,1fr);
+      grid-template-rows: 330px 170px auto;
+      gap: 20px;
+    }
+    .insight-patient, .income-head, .dashboard-blogs-patient{
+      width: 300px;
+    }
+    .consultation, .reviews{
+      width: 300px;
+    }
+    .booking-rate{
+      width: 620px;
+    } 
+  
+  }
+  
+  
+  
+  
+  /*======================insight-patient =========start======================*/
+  .insight-patient .dashboard-head-common{
+    display: flex;
+    justify-content: space-between;
+    align-items:start;
+  }
+  
+  .insight-patient .dashboard-head-common p{
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.4px;
+    color: #272848;
+  }
+  
+  .insight-patient .dashboard-head-common .select-container .select-box-common {
+    padding: 5px 50px 5px 10px;
+    background: #f7faff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #272848;
+    cursor: pointer;
+    -webkit-appearance: none; /* For Chrome */
+    -moz-appearance: none; /* For Firefox */
+    appearance: none; /* For modern browsers */
+    outline: none;
+  }
+  
+  .insight-patient .insight-item {
+    background: #F7FAFF;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin:10px 0px 20px 0px;
+    padding:5px;
+  }
+  
+  .insight-item .insight-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left:10px;
+  }
+  
+  .insight-item .insight-img-container.blue-color {
+    background-color: #007bff;
+  }
+  
+  .insight-item .insight-img-container.dark-blue-color {
+    background-color: #2A3F74;
+  }
+  
+  .insight-item .insight-img-container.green-color {
+    background-color: #4caf50;
+  }
+  .insight-item .insight-img-container .image-insight{
+    width: 30px;
+    height: 30px;
+    object-fit:cover; 
+  }
+  
+  .insight-info h4 {
+    color: #A0AAC8;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    margin: 0;
+  }
+  
+  .insight-info p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    font-weight: 600;
+    margin: 0;
+  }
+  /*======================insight-patient =========End======================*/
+  
+  /*======================your income =========start======================*/
+  .income {
+    position: relative;
+  }
+  
+  .income .dashboard-head-common {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  
+  .income .dashboard-head-common p {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.4px;
+    color: #272848;
+  }
+  
+  .income .dashboard-head-common .select-container .select-box-common {
+    padding: 5px 50px 5px 10px;
+    background: #f7faff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #272848;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+  }
+  
+  .chart-area {
+    max-width: 340px;
+    height: 200px;
+    margin-top: 40px;
+    position: relative;
+    right: 15px;
+  }
+  
+  .coming-soon-overlay {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    color:#272848;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8)
+  }  
+  
+  /*====================== your income end =========End======================*/
+  
+  /*====================== blogs =========start======================*/
+  .dashboard-blogs-patient .dashboard-head-common{
+    display: flex;
+    justify-content: space-between;
+    align-items:start;
+  }
+  
+  .dashboard-blogs-patient .dashboard-head-common p{
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.4px;
+    color: #272848;
+  }
+  
+  .dashboard-blogs-patient .dashboard-head-common .select-container .select-box-common {
+    padding: 5px 50px 5px 10px;
+    background: #f7faff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #272848;
+    cursor: pointer;
+    -webkit-appearance: none; /* For Chrome */
+    -moz-appearance: none; /* For Firefox */
+    appearance: none; /* For modern browsers */
+    outline: none;
+  }
+  
+  .dashboard-blogs-patient .dashboard-blogs-item {
+    background: #F7FAFF;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin:10px 0px 20px 0px;
+    padding:5px;
+  }
+  
+  .dashboard-blogs-item .blog-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left:10px;
+  }
+  
+  /* .dashboard-blogs-item .blogs-img-container.blue-color {
+    background-color: #007bff;
+  } */
+  
+  .dashboard-blogs-item .blog-img-container.dark-blue-color {
+    background-color: #2A3F74;
+  }
+  
+  .dashboard-blogs-item .blog-img-container.orange-color {
+    background-color: orange;
+  }
+  
+  .dashboard-blogs-item .blog-img-container.green-color {
+    background-color: #4caf50;
+  }
+  .dashboard-blogs-item .blog-img-container .dashboard-image-blogs{
+    width: 30px;
+    height: 30px;
+    object-fit:cover; 
+  }
+
+  .dashboard-blog-image{
+    width: 30px;
+    height: 30px;
+  }
+  
+  .dashboard-blogs-info h4 {
+    color: #A0AAC8;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    margin: 0;
+  }
+  
+  .dashboard-blogs-info p{
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    font-weight: 600;
+    margin: 0;
+  }
+  /*====================== blogs end =========End======================*/
+  
+  
+  /*====================== consultation =========start======================*/
+  .consultation .consultation-coverarea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .consultation-coverarea .consultation-info .consultation-count {
+    font-size: 62px;
+    font-weight: 600;
+    line-height: 90px;
+    color: #FFFFFF;
+    margin: 0;
+  }
+  
+  .consultation-coverarea .consultation-info .consultation-label {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #FFFFFF;
+    text-align: left;
+    margin-top:-10px;
+  }
+  
+  .consultation-coverarea .consultation-img {
+    width: 165px;
+    height: 150px;
+  } 
+  
+  /* @media (max-width: 768px) {
+    .consultation-img {
+      margin-bottom: -23px;
+      width: 170px;
+      height: 150px;
+      margin-left: 20px;
+    }
+  } */
+  /*====================== consultation end =========End======================*/
+  
+  /*====================== Review =========start======================*/
+  .reviews .reviews-coverarea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .reviews-coverarea .reviews-info .reviews-count {
+    font-size: 62px;
+    font-weight: 600;
+    line-height: 90px;
+    color: #FFFFFF;
+    margin: 0;
+  }
+  
+  .reviews-coverarea .reviews-info .reviews-label {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #FFFFFF;
+    text-align: left;
+    margin-top:-10px;
+  }
+  
+  .reviews-coverarea .reviews-img {
+    width: 140px;
+    height: 130px;
+  }
+  /*====================== review end =========End======================*/
+  
+  /*====================== booking rate =========start======================*/
+  .booking-rate .booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .booking-header .booking-title {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.4px;
+    color: #272848;
+  }
+  
+  .booking-header .recently {
+    padding: 5px 50px 5px 10px;
+    background: #f7faff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #272848;
+    cursor: pointer;
+    -webkit-appearance: none; /* For Chrome */
+    -moz-appearance: none; /* For Firefox */
+    appearance: none; /* For modern browsers */
+    outline: none;
+  }
+  
+  .booking-area {
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .rate {
+    flex: 1 1 250px;
+  }
+  
+  .rate h1 {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    color: #00A500;
+  }
+  
+  .booking-description {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28.8px;
+    text-align: left;
+    color: #272848;
+  }
+  
+  .increase {
+    font-size: 14px;
+    font-weight: 500;
+    width: 60%;
+    line-height: 16.8px;
+    text-align: left;
+    color: #A0AAC8;
+  }
+  
+  .chart {
+    flex: 2 1 350px;
+    max-width: 600px;
+    padding-top: 50px;
+  }
+  
+  @media (max-width: 768px) {
+  
+    .rate {
+      flex: 1 1 100px;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  
+    .rate h1 {
+      font-size: 2rem;
+    }
+  
+    .rate .booking-description{
+      font-size: 1rem;
+      line-height:20px;
+    }
+    .rate .increase{
+      font-size: 12px;
+      line-height:15px;
+    }
+  
+    .chart {
+      flex: 2 1 250px;
+      max-width:300px;
+    }
+  }
+  
+  
+  /*====================== booking rate =========End======================*/
+  
+  /*====================== schedule =========start ======================*/
+  
+  
+  
+  .select-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .schedule-header .recently {
+    padding: 5px 50px 5px 10px;
+    background: #f7faff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #272848;
+    cursor: pointer;
+    -webkit-appearance: none; /* For Chrome */
+    -moz-appearance: none; /* For Firefox */
+    appearance: none; /* For modern browsers */
+    outline: none;
+  }
+  
+  .arrow-icon-filter {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #ff7f50;
+    pointer-events: none;
+  }
+  
+  

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './adminappointments.css'
-import { FaCheckCircle } from 'react-icons/fa';
 import { RiArrowDownSLine } from "react-icons/ri";
 const Adminappointments = () => {
     const [appointments, setAppointments] = useState([
@@ -124,7 +123,6 @@ const Adminappointments = () => {
                             <th>Doctor</th>
                             <th>Patient</th>
                             <th>Time Slot</th>
-                            <th>Consultation type</th>
                             <th>Status</th>
                             <th>Action</th>
                             <th>Update</th>
@@ -136,7 +134,6 @@ const Adminappointments = () => {
                                 <td>{appointment.doctor}</td>
                                 <td>{appointment.patient}</td>
                                 <td>{appointment.timeSlot}</td>
-                                <td><FaCheckCircle className="tick-icon" /></td>
                                 <td><span className={`status-dot ${appointment.status}`}></span></td>
                                 <td>
                                     <div className="select-container">

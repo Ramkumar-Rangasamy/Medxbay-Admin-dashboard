@@ -25,7 +25,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Adminsidebar = () => {
   const location = useLocation();
-  const [activeItem, setActiveItem] = useState(location.pathname);
+  const [activeItem, setActiveItem] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 768);
 
   useEffect(() => {
@@ -42,12 +42,19 @@ const Adminsidebar = () => {
   }, []);
 
   useEffect(() => {
-    setActiveItem(location.pathname);
+    // Update active item based on the current path
+    if (location.pathname.includes('/admin-viewpatients') || location.pathname.includes('/edit-viewpatients')) {
+      setActiveItem('/admin-viewpatients');
+    } else if (location.pathname.includes('/admin-doctorprofile') || location.pathname.includes('/admin-doctorprofile-verification')) {
+      setActiveItem('/admin-doctorprofile');
+    } else {
+      setActiveItem(location.pathname);
+    }
   }, [location.pathname]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
-  };;
+  };
 
   return (
     <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
@@ -93,29 +100,29 @@ const Adminsidebar = () => {
           <span>Upload Admin Blog</span>
         </Link>
       </li>
-      <li className={`menu-item ${activeItem === '/inbox' ? 'active' : ''}`} 
-          onMouseEnter={() => setActiveItem('/inbox')}
+      <li className={`menu-item ${activeItem === '/admin-doctorprofile' ? 'active' : ''}`} 
+          onMouseEnter={() => setActiveItem('/admin-doctorprofile')}
           onMouseLeave={() => setActiveItem(location.pathname)}
       >
-        <Link to="/inbox" className="menu-link">
+        <Link to="/admin-doctorprofile" className="menu-link">
           <div className="sidebar-icon"><FaRegUserCircle /></div>
           <span>Doctor Profile</span>
         </Link>
       </li>
-      <li className={`menu-item ${activeItem === '/listings' ? 'active' : ''}`} 
-          onMouseEnter={() => setActiveItem('/listings')}
+      <li className={`menu-item ${activeItem === '/admin-doctorsubscription' ? 'active' : ''}`} 
+          onMouseEnter={() => setActiveItem('/admin-doctorsubscription')}
           onMouseLeave={() => setActiveItem(location.pathname)}
       >
-        <Link to="/listings" className="menu-link">
+        <Link to="/admin-doctorsubscription" className="menu-link">
           <div className="sidebar-icon"><TbStar  /></div>
           <span>Doctor Subscription</span>
         </Link>
       </li>
-      <li className={`menu-item ${activeItem === '/reviews' ? 'active' : ''}`} 
-          onMouseEnter={() => setActiveItem('/reviews')}
+      <li className={`menu-item ${activeItem === '/admin-insurance' ? 'active' : ''}`} 
+          onMouseEnter={() => setActiveItem('/admin-insurance')}
           onMouseLeave={() => setActiveItem(location.pathname)}
       >
-        <Link to="/reviews" className="menu-link">
+        <Link to="/admin-insurance" className="menu-link">
           <div className="sidebar-icon"><SiCommerzbank /></div>
           <span>Manage Insurance</span>
         </Link>
@@ -129,11 +136,11 @@ const Adminsidebar = () => {
           <span>View Doctors</span>
         </Link>
       </li>
-      <li className={`menu-item ${activeItem === '/booking' ? 'active' : ''}`} 
-          onMouseEnter={() => setActiveItem('/booking')}
+      <li className={`menu-item ${activeItem === '/admin-viewpatients' ? 'active' : ''}`} 
+          onMouseEnter={() => setActiveItem('/admin-viewpatients')}
           onMouseLeave={() => setActiveItem(location.pathname)}
       >
-        <Link to="/booking" className="menu-link">
+        <Link to="/admin-viewpatients" className="menu-link">
           <div className="sidebar-icon"><FaUserInjured /></div>
           <span>View Patients</span>
         </Link>
