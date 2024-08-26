@@ -18,6 +18,7 @@ import { MdPreview } from "react-icons/md";
 import { FaUserInjured } from "react-icons/fa6";
 import { AiOutlineNotification } from "react-icons/ai";
 import { RiLogoutCircleRLine } from 'react-icons/ri';
+import { PiUserSwitchBold } from "react-icons/pi";
 
 //using Link and uselocation for active and inactive
 import { Link, useLocation } from 'react-router-dom';
@@ -88,7 +89,7 @@ const Adminsidebar = () => {
       >
         <Link to="/viewadminblogs" className="menu-link">
           <div className="sidebar-icon"><  MdWallpaper /></div>
-          <span>View Admin Blogs</span>
+          <span>View Blogs</span>
         </Link>
       </li>
       <li className={`menu-item ${activeItem === '/statistics' ? 'active' : ''}`} 
@@ -97,7 +98,7 @@ const Adminsidebar = () => {
       >
         <Link to="/statistics" className="menu-link">
           <div className="sidebar-icon"><RiInboxLine  /></div>
-          <span>Upload Admin Blog</span>
+          <span>Creative  Blog</span>
         </Link>
       </li>
       <li className={`menu-item ${activeItem === '/admin-doctorprofile' ? 'active' : ''}`} 
@@ -141,7 +142,7 @@ const Adminsidebar = () => {
           onMouseLeave={() => setActiveItem(location.pathname)}
       >
         <Link to="/admin-viewpatients" className="menu-link">
-          <div className="sidebar-icon"><FaUserInjured /></div>
+          <div className="sidebar-icon"><PiUserSwitchBold /></div>
           <span>View Patients</span>
         </Link>
       </li>

@@ -56,7 +56,7 @@ const DashboardPage = () => {
 
   return (
     <div className='main-dashboard-page'>
-      <h2>Dashboard</h2>
+      <h2 className='heading-dashboard-page'>Dashboard</h2>
       <div className='dashboard-scoll-head'>
         <div className='dashboard-gird-layout'>
 

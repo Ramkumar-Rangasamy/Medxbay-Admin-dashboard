@@ -1,7 +1,7 @@
 import React from 'react'
 import './adminheader.css'
 import { Link } from "react-router-dom";
-import profile from '../../Assets/pexels-andrea-piacquadio-3776187.jpg';
+import profile from '../../Assets/profileimg.png';
 const Adminheader = () => {
   return (
     <>

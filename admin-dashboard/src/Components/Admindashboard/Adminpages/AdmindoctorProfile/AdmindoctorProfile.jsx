@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 const AdmindoctorProfile = () => {
   const doctorprofile = [
     { id: 1, doctorName: 'Dr. Pardhu', Email: 'Pardhu@gmail.com', status: 'Verified' },
-    { id: 2, doctorName: 'Dr. Hari', Email: 'Hari@gmail.com', status: 'Pending' },
+    { id: 2, doctorName: 'Dr. Hari', Email: 'Hari@gmail.com', status: 'Not Verified' },
     { id: 3, doctorName: 'Dr. Shiva', Email: 'Shiva@gmail.com', status: 'Verified' },
     { id: 4, doctorName: 'Dr. Kishore', Email: 'Kishore@gmail.com', status: 'Pending' },
-    { id: 5, doctorName: 'Dr. Radha', Email: 'Radha@gmail.com', status: 'Rejected' },
+    { id: 5, doctorName: 'Dr. Radha', Email: 'Radha@gmail.com', status: 'Not Verified' },
     { id: 6, doctorName: 'Dr. Hari', Email: 'Hari@gmail.com', status: 'Pending' },
     { id: 7, doctorName: 'Dr. Shiva', Email: 'Shiva@gmail.com', status: 'Verified' },
-    { id: 8, doctorName: 'Dr. Kishore', Email: 'Kishore@gmail.com', status: 'Pending' },
+    { id: 8, doctorName: 'Dr. Kishore', Email: 'Kishore@gmail.com', status: 'Not Verified' },
+    { id: 9, doctorName: 'Dr. Shiva', Email: 'Shiva@gmail.com', status: 'Pending' },
   ];
 
   const getStatusClassName = (status) => {
@@ -20,8 +21,8 @@ const AdmindoctorProfile = () => {
         return 'status-verified';
       case 'Pending':
         return 'status-pending';
-      case 'Rejected':
-        return 'status-rejected';
+      case 'Not Verifiedd':
+        return 'status-NotVerified';
       default:
         return '';
     }
