@@ -1,13 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Viewblogdetails.css";
 import BlogCard from './Viewblogitems/BlogCard';
 
 const Blog = () => {
-  const [showAddNewBlog, setShowAddNewBlog] = useState(false); 
-
-  const handleAddClick = () => {
-    setShowAddNewBlog(true); 
-  };
 
   return (
     <>
