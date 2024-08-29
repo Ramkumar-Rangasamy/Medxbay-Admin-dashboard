@@ -1,22 +1,26 @@
-.Admin-subscription {
+.admin-subscription{
     padding: 0px 20px;
  }
  
-.Admin-subscription h2 {
+.admin-subscription .admin-subscription-title {
   font-size: 25px;
   font-weight: 700;
   line-height: 28.8px;
   color: #272848;
   display: inline-block;
   padding:20px 10px 0 5px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
      
   
- .Admin-subscription-table-container {
-    height:calc(100vh - 180px);
-     overflow-y: auto;
- }
+.admin-subscription-table-container {
+  overflow-y: auto;
+  height:calc(100vh - 250px);
+}
+
+.admin-subscription-table-container::-webkit-scrollbar {
+  width: 0px;
+}
      
  .Admin-subscription-table{
      width: 100%;
@@ -48,9 +52,7 @@
      
  /* Scrollbar styles */
    
- .Admin-subscription-table-container::-webkit-scrollbar {
-     width: 0px;
- }
+ 
  /*not deleted importanted*/ 
  
  /*.appointments-table-container::-webkit-scrollbar-thumb {
@@ -94,15 +96,15 @@
   .status-dot.rejected {
     background-color: red;
   }
-   
- .Admin-subscription-table  .admin-select-container .arrow-icon {
-     position: absolute;
-     top: 50%;
-     right:10px;
-     transform: translateY(-45%);
-     font-size: 20px;
-     color: #2AA7FF;
-     pointer-events: none; /* Ensure icon does not interfere with select */
+
+.Admin-subscription-table  .admin-select-container .arrow-icon {
+  position: absolute;
+  top: 50%;
+  right:10px;
+  transform: translateY(-45%);
+  font-size: 20px;
+  color: #2AA7FF;
+  pointer-events: none; /* Ensure icon does not interfere with select */
 }
 
 .subscription-submit{
@@ -119,7 +121,7 @@
   color:#ffffff;
 }
  
- .subscription-View{
+.subscription-View{
     background: none;
     color: #272848;
     border: 1.5px solid #0163F7;

@@ -78,7 +78,7 @@ const Editviewpatient = () => {
 
     return (
         <div className="admin-edit-patient">
-            <h2>Edit Patient</h2>
+            <h2>Edit Patient Profile</h2>
             <form className="admin-edit-patient-container" onSubmit={handleSubmit}>
                 <div className="admin-edit-patient-header">
                     <input

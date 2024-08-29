@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './admindoctorsubscription.css';
-import { RiArrowDownSLine } from "react-icons/ri";
+import { RiSearchLine, RiArrowDownSLine } from "react-icons/ri";
 
 const AdmindoctorSubscription = () => {
+  const [activeTab, setActiveTab] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
   const [subscriptions, setSubscriptions] = useState([
     { id: 1, doctorName: 'Dr. Pardhu', subscriptionType: 'Free', status: 'Verified' },
     { id: 2, doctorName: 'Dr. Hari', subscriptionType: 'Premium', status: 'Pending' },
@@ -17,6 +19,23 @@ const AdmindoctorSubscription = () => {
     { id: 11, doctorName: 'Dr. Radha', subscriptionType: 'Free', status: 'Rejected' },
     { id: 12, doctorName: 'Dr. Sam', subscriptionType: 'Premium', status: 'Pending' },
   ]);
+
+  // Correcting the filter logic
+  const filteredSubscriptions = subscriptions.filter(subscription => {
+    // Filter by status
+    if (activeTab !== 'All' && subscription.status.toLowerCase() !== activeTab) {
+      return false;
+    }
+    // Filter by search query
+    if (searchQuery && !subscription.doctorName.toLowerCase().includes(searchQuery.toLowerCase())) {
+      return false;
+    }
+    return true;
+  });
+
+  const handleSearch = () => {
+    setSearchQuery(searchQuery.trim());
+  };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -33,9 +52,29 @@ const AdmindoctorSubscription = () => {
   };
 
   return (
-    <div className="Admin-subscription">
-      <h2>Doctor Subscriptions</h2>
-      <div className='Admin-subscription-table-container'>
+    <div className="admin-subscription">
+      <h2 className='admin-subscription-title'>Doctor Subscriptions</h2>
+      <div className="admin-dashboard-appointments-tabs-container">
+        <div className="admin-dashboard-appointments-tabs">
+          <button className={`admin-tab ${activeTab === 'All' ? 'admin-active' : ''}`} onClick={() => setActiveTab('All')}>All</button>
+          <button className={`admin-tab ${activeTab === 'verified' ? 'admin-active' : ''}`} onClick={() => setActiveTab('verified')}>Verified</button>
+          <button className={`admin-tab ${activeTab === 'pending' ? 'admin-active' : ''}`} onClick={() => setActiveTab('pending')}>Pending</button>
+          <button className={`admin-tab ${activeTab === 'rejected' ? 'admin-active' : ''}`} onClick={() => setActiveTab('rejected')}>Rejected</button>
+        </div>
+        <div className="admin-search-bar">
+          <input
+            type="text"
+            placeholder="Search for subscriptions ..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <RiSearchLine
+            className="admin-search-bar-icon"
+            onClick={handleSearch}
+          />
+        </div>
+      </div>
+      <div className='admin-subscription-table-container'>
         <table className="Admin-subscription-table">
           <thead>
             <tr>
@@ -48,12 +87,12 @@ const AdmindoctorSubscription = () => {
             </tr>
           </thead>
           <tbody>
-            {subscriptions.map(({ id, doctorName, subscriptionType, status }) => (
+            {filteredSubscriptions.map(({ id, doctorName, subscriptionType, status }) => (
               <tr key={id}>
                 <td>{doctorName}</td>
                 <td>{subscriptionType}</td>
                 <td>
-                  <span className={`status-dot ${status.toLowerCase()}`}></span> {status}
+                  <span className={`status-dot ${status.toLowerCase()}`}></span>  
                 </td>
                 <td>
                   <div className="admin-select-container">

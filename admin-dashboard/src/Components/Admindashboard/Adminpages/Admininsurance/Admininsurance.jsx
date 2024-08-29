@@ -4,6 +4,7 @@ import './Admininsurance.css';
 import insuranceTypeone from '../../../Assets/insurane-image.png';
 import insuranceProfileTypeTwo from '../../../Assets/insurance-type-2.png'; 
 import { CiImageOn } from "react-icons/ci";
+import { TiPlus } from "react-icons/ti";
 
 Modal.setAppElement('#root');
 
@@ -56,7 +57,7 @@ const Admininsurance = () => {
         <div className="admin-insurance">
             <div className="admin-insurance-header">
                 <h2>All Insurance</h2>
-                <button className="Admin-new-insurance" onClick={openModal}>Add New Insurance</button>
+                <button className="Admin-new-insurance" onClick={openModal}>Add New Insurance <TiPlus  className="Admin-new-insurance-iocn"/> </button>
             </div>
 
             <div className="admin-insurance-list">

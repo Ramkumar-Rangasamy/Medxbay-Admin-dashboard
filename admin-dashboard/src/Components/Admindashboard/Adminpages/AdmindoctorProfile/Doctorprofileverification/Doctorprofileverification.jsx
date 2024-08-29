@@ -445,7 +445,7 @@ const Doctorprofileverification = () => {
               </div>
             </div>
             <div className="admin-dp-verification-pd-button-itheader">
-              <button type="submit" className="submit-button">Submit</button>
+              <button type="submit" className="submit-button">Update</button>
               <Link to="/admin-doctorprofile" className="cancel-button">Close Profile</Link>
             </div>
           </form>

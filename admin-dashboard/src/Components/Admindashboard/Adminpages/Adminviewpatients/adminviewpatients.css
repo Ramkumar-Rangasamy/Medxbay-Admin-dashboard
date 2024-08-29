@@ -2,7 +2,13 @@
     padding: 0px 20px;
 }
 
-.admin-view-patient h2 {
+.patient-head-part-title-search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+}
+
+.admin-view-patient .patient-head-part-title-search .admin-view-patient-title {
   font-size: 25px;
   font-weight: 700;
   line-height: 28.8px;
@@ -11,6 +17,7 @@
   padding:20px 10px 0 5px;
   margin-bottom: 30px;
 }
+
 
 .admin-view-patient-table-container {
     overflow-y: auto;

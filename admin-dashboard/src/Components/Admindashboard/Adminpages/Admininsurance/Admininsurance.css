@@ -22,18 +22,25 @@
     border: 1.5px solid #0163F7;
     border-radius: 2px;
     background: none;
+    outline: none;
     font-size: 14px;
     font-weight: 600;
     line-height: 21px;
     color: #0163F7;
-    width: 150px;
-    height: 38px; 
-    margin: 0 30px;  
+    padding: 8px 15px;
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap:10px; 
 }
 
 .Admin-new-insurance:hover{
     background-color: #0163F7;
     color: #fff;
+}
+.Admin-new-insurance .Admin-new-insurance-iocn{
+    margin-top:3px;
 }
 
 .admin-insurance-list {
@@ -128,10 +135,11 @@
     display: flex;
     justify-content: center;
     align-items: center; 
+    padding: 20px;
 }
 
 .admin-insurance-form-group {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 15px;
     text-align: left;
 }
@@ -140,6 +148,7 @@
     display: block;
     color:#272848;
     font-weight: 500;
+    padding-bottom:5px;
 }
 
 .admin-insurance-form-group input{

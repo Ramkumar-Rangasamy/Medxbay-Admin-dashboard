@@ -1,58 +1,59 @@
-.Admin-doctorprofile {
+.admin-doctorprofile{
   padding: 0px 20px;
 }
 
-.Admin-doctorprofile h2 {
+.admin-doctorprofile .admin-doctorprofile-title {
   font-size: 25px;
   font-weight: 700;
   line-height: 28.8px;
   color: #272848;
   display: inline-block;
   padding:20px 10px 0 5px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
   
-.Admin-doctorprofile-table-container {
-  height:calc(100vh - 180px);
+.admin-doctorprofile-table-container {
   overflow-y: auto;
+  height:calc(100vh - 250px);
 }
+
 /* Scrollbar styles */
-.Admin-doctorprofile-table-container::-webkit-scrollbar {
+.admin-doctorprofile-table-container::-webkit-scrollbar {
   width: 0px;
 }
   
-.Admin-doctorprofile-table {
+.admin-doctorprofile-table {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
 }
   
-.Admin-doctorprofile-table thead tr {
+.admin-doctorprofile-table thead tr {
   background: #fbfbfb;
   color: #272848;
   border: 1px solid #0000001a;
 }
   
-.Admin-doctorprofile-table thead tr th {
+.admin-doctorprofile-table thead tr th {
   padding: 5px;
   font-size: 16px;
   font-weight: 700;
   color: #272848;
 }
   
-.Admin-doctorprofile-table tbody tr td {
+.admin-doctorprofile-table tbody tr td {
   font-size: 16px;
   font-weight: 500;
   padding: 15px;
   border-bottom: 4px solid #f0f0f5;
 }
 
-.Admin-doctorprofile-table .admin-select-container {
+.admin-doctorprofile-table .admin-select-container {
   position: relative;
   display: inline-block;
 }
 
-.Admin-doctorprofile-table .admin-select-container .admin-status-select {
+.admin-doctorprofile-table .admin-select-container .admin-status-select {
   border: 1px solid #78798d;
   font-weight: 600;
   padding: 5px 30px 5px 20px;
@@ -64,7 +65,7 @@
   width: 150px;
 }
 
-.Admin-doctorprofile-table .admin-select-container .arrow-icon {
+.admin-doctorprofile-table .admin-select-container .arrow-icon {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -88,7 +89,7 @@
   color: red; 
 }
 
-.Admin-doctorprofile-submit {
+.admin-doctorprofile-submit {
   border: 1.5px solid #0067FF;
   background: none;
   outline: none;
@@ -99,7 +100,7 @@
   font-weight: 500;
 }
 
-.Admin-doctorprofile-submit:hover {
+.admin-doctorprofile-submit:hover {
   background-color: #0067FF;
   color: #FFFFFF;
 }

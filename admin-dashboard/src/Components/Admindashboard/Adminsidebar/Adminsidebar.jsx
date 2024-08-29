@@ -14,11 +14,10 @@ import { RiInboxLine } from "react-icons/ri";
 import { FaRegUserCircle } from "react-icons/fa";
 import { TbStar } from "react-icons/tb";
 import { SiCommerzbank } from "react-icons/si";
-import { MdPreview } from "react-icons/md";
-import { FaUserInjured } from "react-icons/fa6";
+import { BiStreetView } from "react-icons/bi";
+import { TbUserHexagon } from "react-icons/tb";
 import { AiOutlineNotification } from "react-icons/ai";
 import { RiLogoutCircleRLine } from 'react-icons/ri';
-import { PiUserSwitchBold } from "react-icons/pi";
 
 //using Link and uselocation for active and inactive
 import { Link, useLocation } from 'react-router-dom';
@@ -43,15 +42,22 @@ const Adminsidebar = () => {
   }, []);
 
   useEffect(() => {
-    // Update active item based on the current path
-    if (location.pathname.includes('/admin-viewpatients') || location.pathname.includes('/edit-viewpatients')) {
-      setActiveItem('/admin-viewpatients');
-    } else if (location.pathname.includes('/admin-doctorprofile') || location.pathname.includes('/admin-doctorprofile-verification')) {
+    const path = location.pathname;
+  
+    if (path === '/admin-doctorprofile' || path === '/admin-doctorprofile-verification') {
       setActiveItem('/admin-doctorprofile');
+    } else if (path === '/admin-viewblog' || path === '/view-detailsblog') {
+      setActiveItem('/admin-viewblog');
+    } else if (path === '/admin-viewdoctor' || path === '/edit-viewdoctor') {
+      setActiveItem('/admin-viewdoctor');
+    } else if (path === '/admin-viewpatients' || path === '/edit-viewpatients') {
+      setActiveItem('/admin-viewpatients');
     } else {
-      setActiveItem(location.pathname);
+      setActiveItem(path);
     }
   }, [location.pathname]);
+  
+  
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -83,22 +89,22 @@ const Adminsidebar = () => {
           <span>Dashboard Page</span>
         </Link>
       </li>
-      <li className={`menu-item ${activeItem === '/viewadminblogs' ? 'active' : ''}`} 
-          onMouseEnter={() => setActiveItem('/viewadminblogs')}
+      <li className={`menu-item ${activeItem === '/admin-viewblog' ? 'active' : ''}`} 
+          onMouseEnter={() => setActiveItem('/admin-viewblog')}
           onMouseLeave={() => setActiveItem(location.pathname)}
       >
-        <Link to="/viewadminblogs" className="menu-link">
+        <Link to="/admin-viewblog" className="menu-link">
           <div className="sidebar-icon"><  MdWallpaper /></div>
           <span>View Blogs</span>
         </Link>
       </li>
-      <li className={`menu-item ${activeItem === '/statistics' ? 'active' : ''}`} 
-          onMouseEnter={() => setActiveItem('/statistics')}
+      <li className={`menu-item ${activeItem === '/admin-createblog' ? 'active' : ''}`} 
+          onMouseEnter={() => setActiveItem('/admin-createblog')}
           onMouseLeave={() => setActiveItem(location.pathname)}
       >
-        <Link to="/statistics" className="menu-link">
+        <Link to="/admin-createblog" className="menu-link">
           <div className="sidebar-icon"><RiInboxLine  /></div>
-          <span>Creative  Blog</span>
+          <span>Create  Blog</span>
         </Link>
       </li>
       <li className={`menu-item ${activeItem === '/admin-doctorprofile' ? 'active' : ''}`} 
@@ -128,12 +134,12 @@ const Adminsidebar = () => {
           <span>Manage Insurance</span>
         </Link>
       </li>
-      <li className={`menu-item ${activeItem === '/reports' ? 'active' : ''}`} 
-          onMouseEnter={() => setActiveItem('/reports')}
+      <li className={`menu-item ${activeItem === '/admin-viewdoctor' ? 'active' : ''}`} 
+          onMouseEnter={() => setActiveItem('/admin-viewdoctor')}
           onMouseLeave={() => setActiveItem(location.pathname)}
       >
-        <Link to="/reports" className="menu-link">
-          <div className="sidebar-icon"><MdPreview /></div>
+        <Link to="/admin-viewdoctor" className="menu-link">
+          <div className="sidebar-icon"><TbUserHexagon/></div>
           <span>View Doctors</span>
         </Link>
       </li>
@@ -142,7 +148,7 @@ const Adminsidebar = () => {
           onMouseLeave={() => setActiveItem(location.pathname)}
       >
         <Link to="/admin-viewpatients" className="menu-link">
-          <div className="sidebar-icon"><PiUserSwitchBold /></div>
+          <div className="sidebar-icon"><BiStreetView /></div>
           <span>View Patients</span>
         </Link>
       </li>
