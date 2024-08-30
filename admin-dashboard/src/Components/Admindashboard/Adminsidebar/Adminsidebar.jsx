@@ -12,6 +12,8 @@ import { BiSolidDashboard } from "react-icons/bi";
 import { MdWallpaper } from "react-icons/md";
 import { RiInboxLine } from "react-icons/ri";
 import { FaRegUserCircle } from "react-icons/fa";
+import { RiListView } from "react-icons/ri";
+import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { TbStar } from "react-icons/tb";
 import { SiCommerzbank } from "react-icons/si";
 import { BiStreetView } from "react-icons/bi";
@@ -114,6 +116,24 @@ const Adminsidebar = () => {
         <Link to="/admin-doctorprofile" className="menu-link">
           <div className="sidebar-icon"><FaRegUserCircle /></div>
           <span>Doctor Profile</span>
+        </Link>
+      </li>
+      <li className={`menu-item ${activeItem === '/admin-managebookings' ? 'active' : ''}`} 
+          onMouseEnter={() => setActiveItem('/admin-managebookings')}
+          onMouseLeave={() => setActiveItem(location.pathname)}
+      >
+        <Link to="/admin-managebookings" className="menu-link">
+          <div className="sidebar-icon"><RiListView /></div>
+          <span>Manage Bookings</span>
+        </Link>
+      </li>
+      <li className={`menu-item ${activeItem === '/admin-managepayments' ? 'active' : ''}`} 
+          onMouseEnter={() => setActiveItem('/admin-managepayments')}
+          onMouseLeave={() => setActiveItem(location.pathname)}
+      >
+        <Link to="/admin-managepayments" className="menu-link">
+          <div className="sidebar-icon"><RiMoneyDollarCircleLine /></div>
+          <span>Manage payments</span>
         </Link>
       </li>
       <li className={`menu-item ${activeItem === '/admin-doctorsubscription' ? 'active' : ''}`} 

@@ -44,7 +44,7 @@
   display: flex;
   align-items: start;
   justify-content: space-evenly;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 100px);
 }
 
 .menu-item {

@@ -14,6 +14,9 @@ import Admincreateblog from '../Adminpages/Admincreateblog/Admincreateblog';
 import AdmindoctorProfile from '../Adminpages/AdmindoctorProfile/AdmindoctorProfile';
 import Doctorprofileverification from '../Adminpages/AdmindoctorProfile/Doctorprofileverification/Doctorprofileverification';
 
+import Adminmanagebookings from '../Adminpages/Adminmanagebookings/Adminmanagebookings';
+import Adminmangepayments from '../Adminpages/Adminmanagepayments/Adminmanagepayments';
+ 
 import Admindoctorsubscription from '../Adminpages/Admindoctorsubscription/Admindoctorsubscription';
 
 import Admininsurance from '../Adminpages/Admininsurance/Admininsurance';
@@ -37,13 +40,17 @@ const Adminroute = () => {
         
         <Route path="/admin-viewblog" element={<Adminviewblogs />} />
         <Route path="/view-detailsblog" element={<Viewblogsdetails />} />
-
+      
         <Route path="/admin-createblog" element={<Admincreateblog/>} />
 
-
-        <Route path="/admin-doctorsubscription" element={<Admindoctorsubscription/>} />
         <Route path="/admin-doctorprofile" element={<AdmindoctorProfile/>} />
         <Route path="/admin-doctorprofile-verification" element={<Doctorprofileverification/>} />
+        
+        <Route path="/admin-doctorsubscription" element={<Admindoctorsubscription/>} />
+         
+        <Route path="/admin-managebookings" element={<Adminmanagebookings/>} />
+        <Route path="/admin-managepayments" element={<Adminmangepayments/>} />
+        
         <Route path="/admin-insurance" element={<Admininsurance/>} />
 
 
