@@ -23,7 +23,7 @@ const Adminviewdoctor = () => {
   const navigate = useNavigate();
 
   const handleEdit = (doctor) => {
-    navigate(`/edit-viewdoctor`, { state: { doctor } });
+    navigate(`/edit-viewdoctor`, { state: { doctor } }); // Passing doctor data
   };
 
   const handleDelete = (name) => {
@@ -37,7 +37,6 @@ const Adminviewdoctor = () => {
     setSearchQuery(event.target.value);
   };
 
-  // Corrected filter logic to search by name or email
   const filteredDoctors = doctors.filter((doctor) => {
     const lowerCaseSearchQuery = searchQuery.toLowerCase();
     return (
