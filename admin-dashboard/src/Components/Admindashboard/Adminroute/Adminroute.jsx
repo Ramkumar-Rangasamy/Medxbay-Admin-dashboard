@@ -15,6 +15,8 @@ import AdmindoctorProfile from '../Adminpages/AdmindoctorProfile/AdmindoctorProf
 import Doctorprofileverification from '../Adminpages/AdmindoctorProfile/Doctorprofileverification/Doctorprofileverification';
 
 import Adminmanagebookings from '../Adminpages/Adminmanagebookings/Adminmanagebookings';
+import Bookingdetails from '../Adminpages/Adminmanagebookings/Bookingdetails/Bookingdetails';
+
 import Adminmangepayments from '../Adminpages/Adminmanagepayments/Adminmanagepayments';
  
 import Admindoctorsubscription from '../Adminpages/Admindoctorsubscription/Admindoctorsubscription';
@@ -49,6 +51,9 @@ const Adminroute = () => {
         <Route path="/admin-doctorsubscription" element={<Admindoctorsubscription/>} />
          
         <Route path="/admin-managebookings" element={<Adminmanagebookings/>} />
+        <Route path="/admin-viewbookings" element={<Bookingdetails/>} />
+
+
         <Route path="/admin-managepayments" element={<Adminmangepayments/>} />
         
         <Route path="/admin-insurance" element={<Admininsurance/>} />

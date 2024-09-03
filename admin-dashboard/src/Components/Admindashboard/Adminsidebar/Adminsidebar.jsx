@@ -7,17 +7,18 @@ import brandLogo from '../../Assets/brand-logo.png';
 import { FaBars } from 'react-icons/fa';
 import { FiX } from 'react-icons/fi';
 
-// Sidebar item icons
-import { BiSolidDashboard } from 'react-icons/bi';
-import { MdWallpaper } from 'react-icons/md';
-import { RiInboxLine } from 'react-icons/ri';
-import { FaRegUserCircle } from 'react-icons/fa';
-import { RiListView } from 'react-icons/ri';
-import { RiMoneyDollarCircleLine } from 'react-icons/ri';
-import { SiCommerzbank } from 'react-icons/si';
-import { BiStreetView } from 'react-icons/bi';
-import { TbUserHexagon } from 'react-icons/tb';
-import { AiOutlineNotification } from 'react-icons/ai';
+//sidebar item icons
+import { BiSolidDashboard } from "react-icons/bi";
+import { MdWallpaper } from "react-icons/md";
+import { RiInboxLine } from "react-icons/ri";
+import { FaRegUserCircle } from "react-icons/fa";
+import { RiListView } from "react-icons/ri";
+import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { TbStar } from "react-icons/tb";
+import { SiCommerzbank } from "react-icons/si";
+import { TbUserHexagon } from "react-icons/tb";
+import { BiStreetView } from "react-icons/bi";
+import { AiOutlineNotification } from "react-icons/ai";
 import { RiLogoutCircleRLine } from 'react-icons/ri';
 
 // Using Link and useLocation for active and inactive states
@@ -157,6 +158,17 @@ const Adminsidebar = () => {
           </Link>
         </li>
         <li 
+          className={`menu-item ${activeItem === '/admin-doctorsubscription' ? 'active' : ''}`} 
+          onMouseEnter={() => setActiveItem('/admin-doctorsubscription')}
+          onMouseLeave={() => setActiveItem(localStorage.getItem('lastActiveItem') || '/admindashboardpage')}
+          onClick={() => handleItemClick('/admin-doctorsubscription')}
+        >
+          <Link to="/admin-doctorsubscription" className="menu-link">
+            <div className="sidebar-icon"><TbStar/></div>
+            <span>Doctor Subscription</span>
+          </Link>
+        </li>
+        <li 
           className={`menu-item ${activeItem === '/admin-managepayments' ? 'active' : ''}`} 
           onMouseEnter={() => setActiveItem('/admin-managepayments')}
           onMouseLeave={() => setActiveItem(localStorage.getItem('lastActiveItem') || '/admindashboardpage')}
@@ -175,7 +187,7 @@ const Adminsidebar = () => {
         >
           <Link to="/admin-insurance" className="menu-link">
             <div className="sidebar-icon"><SiCommerzbank /></div>
-            <span>Insurance</span>
+            <span>Manage Insurance</span>
           </Link>
         </li>
         <li 
@@ -185,7 +197,7 @@ const Adminsidebar = () => {
           onClick={() => handleItemClick('/admin-viewdoctor')}
         >
           <Link to="/admin-viewdoctor" className="menu-link">
-            <div className="sidebar-icon"><BiStreetView /></div>
+            <div className="sidebar-icon"><TbUserHexagon /></div>
             <span>View Doctors</span>
           </Link>
         </li>
@@ -196,7 +208,7 @@ const Adminsidebar = () => {
           onClick={() => handleItemClick('/admin-viewpatients')}
         >
           <Link to="/admin-viewpatients" className="menu-link">
-            <div className="sidebar-icon"><TbUserHexagon /></div>
+            <div className="sidebar-icon"><BiStreetView /></div>
             <span>View Patients</span>
           </Link>
         </li>

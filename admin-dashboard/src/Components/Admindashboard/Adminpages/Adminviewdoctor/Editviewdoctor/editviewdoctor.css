@@ -80,7 +80,7 @@
 }
   
 .admin-viewdoctor-profile-input-name-clsn{
-    width: 520px;
+    width: 450px;
     height: 45px;
     border-radius: 8px;
     padding: 0 22px;
@@ -103,7 +103,7 @@
 }
 
 .admin-viewdoctor-profile-textarea{
-    width: 520px;
+    width: 450px;
     height:auto;
     border-radius: 8px;
     padding: 10px;
@@ -138,19 +138,21 @@
 /*header for title to all input and input-placeholder ============Start*/
 .admin-viewdoctor-profile-edit-header-two{
     margin: 0 0 50px 0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
 .admin-viewdoctor-edit-details{
     display: flex;
     justify-content:space-between;
-    gap: 40px;
+    gap:30px;
     flex-wrap: wrap;
-    margin: 40px 8rem;    
+    margin-top:50px;  
 }
 
 .admin-viewdoctor-edit-details-division{
     position: relative;
-    width: 450px;
-    max-width: 100%;
+    width: 530px;
 }
 
 .admin-viewdoctor-edit-details-input {
@@ -355,6 +357,49 @@
 
 /*Only for Insurance =========End*/
 
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 999px) {
+    .admin-viewdoctor-profile-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .admin-viewdoctor-profile-head {
+        width: 200px;
+        height: 200px;
+    }
+}
 
+@media (max-width: 768px) {
+    .admin-viewdoctor-profile-header {
+        gap: 10px;
+    }
+    .admin-viewdoctor-profile-head {
+        width: 180px;
+        height: 180px;
+    }
+    .admin-viewdoctor-profile-head-title {
+        text-align: center;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .admin-viewdoctor-profile-header {
+        gap: 15px;
+    }
+    .admin-viewdoctor-profile-head {
+        width: 150px;
+        height: 150px;
+    }
+    .admin-viewdoctor-profile-head-title {
+        font-size: 18px;
+        text-align: center;
+        padding: 0 15px;
+    }
+    .admin-viewdoctor-profile-input-header,
+    .admin-dp-verification-pd-button-itheader {
+        width: 100%;
+    }
+}
 
   

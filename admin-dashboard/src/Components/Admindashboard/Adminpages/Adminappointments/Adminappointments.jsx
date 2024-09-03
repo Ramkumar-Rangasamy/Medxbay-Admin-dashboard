@@ -58,7 +58,7 @@ const Adminappointments = () => {
 
     return (
         <div className="admin-dashboard-appointments">
-            <h2 className='admin-manage-title'>Manage Appointments</h2>
+            <h2 className='admin-manage-title'>Appointments</h2>
             <div className="admin-dashboard-appointments-tabs-container">
                 <div className="admin-dashboard-appointments-tabs">
                     <button className={`admin-tab ${activeTab === 'All' ? 'admin-active' : ''}`} onClick={() => setActiveTab('All')}>All</button>

@@ -410,6 +410,23 @@ const Doctorprofileverification = () => {
                 FAQs<span> *</span>
               </p>
             </div>
+            
+            <div className="admin-dp-hospitals-verification-details-header">
+              <h2></h2>
+            </div>
+
+            <div className="admin-dp-verification-pd-itheader">
+              <input
+                type="text"
+                name="text"
+                value="Cardialogist"
+                className="admin-dp-verification-input"
+                readOnly
+              />
+              <p className="admin-dp-verification-input-placeholder">
+                Title<span> *</span>
+              </p>
+            </div>
 
             <div className="admin-dp-hospitals-verification-details-header">
               <h2>Verification</h2>
