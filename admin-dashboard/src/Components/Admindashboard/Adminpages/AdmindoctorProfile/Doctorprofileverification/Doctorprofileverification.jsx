@@ -3,11 +3,24 @@ import "./doctorprofileverification.css";
 import doctorprofilesow from "../../../../Assets/doctoprofiletypeone.jpeg";
 import insuranceTypeone from "../../../../Assets/metlife.png";
 import insuranceTypetwo from "../../../../Assets/insurance-type-2.png";
+import dummypdf from "../../../../Assets/dummypdf.pdf";
+import testingimage from "../../../../Assets/testingimage.jpeg";
+
 import { Link } from "react-router-dom";
 import { RiArrowDownSLine } from "react-icons/ri";
 
 const Doctorprofileverification = () => {
   const [subscriptions, setSubscriptions] = useState([]);
+  const [selectedDocument, setSelectedDocument] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const documents = [
+    { id: 1, type: 'pdf', name: 'License proof', fileUrl: dummypdf },
+    { id: 2, type: 'image', name: 'Certification proof', fileUrl: testingimage },
+    { id: 2, type: 'image', name: 'business proof', fileUrl: testingimage },
+
+    // Add more documents as needed
+  ];
 
   const fakedata = {
     languages: ["Tamil", "English", "Kannada"],
@@ -43,6 +56,17 @@ const Doctorprofileverification = () => {
   const handleStatusChange = (id, newStatus) => {
     setSubscriptions(subscriptions.map(sub => sub.id === id ? { ...sub, status: newStatus } : sub));
   };
+  const openModal = (document) => {
+    setSelectedDocument(document);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedDocument(null);
+  };
+
+
 
   return (
     <div className="admin-doctorprofileverification">
@@ -67,7 +91,6 @@ const Doctorprofileverification = () => {
             </p>
           </div>
         </div>
-        <div className="admin-doctorprofileverification-header-two">
           <form className="admin-dp-verification-pl-details">
             <div className="admin-dp-verification-pd-itheader">
               <input
@@ -231,7 +254,7 @@ const Doctorprofileverification = () => {
             <div className="admin-dp-hospitals-verification-details-header">
               <h2>Social Media Handles</h2>
             </div>
-
+           
             <div className="admin-dp-verification-pd-itheader">
               <input
                 type="text"
@@ -351,7 +374,7 @@ const Doctorprofileverification = () => {
             </div>
 
             <div className="admin-dp-hospitals-verification-details-header">
-              <h2>Insurances</h2>
+              <h2>Insurances & Awards</h2>
             </div>
 
             <div className="admin-dp-verification-pd-itheader admin-dp-verification-pd-itheader-multi-input m-0">
@@ -410,23 +433,44 @@ const Doctorprofileverification = () => {
                 FAQs<span> *</span>
               </p>
             </div>
-            
+
             <div className="admin-dp-hospitals-verification-details-header">
-              <h2></h2>
+              <h2>Documents Proof</h2>
             </div>
 
-            <div className="admin-dp-verification-pd-itheader">
-              <input
-                type="text"
-                name="text"
-                value="Cardialogist"
-                className="admin-dp-verification-input"
-                readOnly
-              />
-              <p className="admin-dp-verification-input-placeholder">
-                Title<span> *</span>
-              </p>
-            </div>
+            {documents.map((document) => (
+              <div className="admin-dp-verification-pd-itheader  admin-dp-verification-proof-conatiner " key={document.id}>
+                <input
+                  type="text"
+                  name="view"
+                  className="admin-dp-verification-input admin-dp-verification-proof-input"
+                  value={document.name}
+                  readOnly
+                />
+                <span className="admin-dp-verification-document-proof-view-button" onClick={() => openModal(document)}>
+                  View
+                </span>
+              </div>
+            ))}
+
+            {isModalOpen && selectedDocument && (
+              <div className="doctorverification-modal-overlay" onClick={closeModal}>
+                <div className="doctorverification-modal-content" onClick={(e) => e.stopPropagation()}>
+                  <h2 className="doctorverification-modal-proof-heading">{selectedDocument.name}</h2>
+                  <div className='doctorverification-document-area'>
+                    {selectedDocument.type === 'pdf' ? (
+                      <embed src={selectedDocument.fileUrl} style={{ width: '900px' ,height:'400px'}}  />
+                    ) : (
+                      <img src={selectedDocument.fileUrl} alt="Placeholder" style={{ width: '100%' }} />
+                    )}
+                  </div>
+                  <button onClick={closeModal} className="doctorverification-modal-close">Close</button>
+                </div>
+              </div>
+            )}
+            
+
+
 
             <div className="admin-dp-hospitals-verification-details-header">
               <h2>Verification</h2>
@@ -461,12 +505,14 @@ const Doctorprofileverification = () => {
                 </p>
               </div>
             </div>
+            
+
+
             <div className="admin-dp-verification-pd-button-itheader">
               <button type="submit" className="submit-button">Update</button>
               <Link to="/admin-doctorprofile" className="cancel-button">Close Profile</Link>
             </div>
           </form>
-        </div>
       </div>
     </div>
   );

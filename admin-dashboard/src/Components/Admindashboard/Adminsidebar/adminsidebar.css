@@ -65,6 +65,8 @@
   font-weight: 400;
   font-size: 16px;
   color: inherit;
+  outline: none;
+  border: none;
   width: 100%;
 }
 
@@ -113,6 +115,8 @@
 
 .menu-item span {
   flex-grow: 1;
+  outline: none;
+  border: none;
 }
 
 .sidebar.closed .menu-item span {
